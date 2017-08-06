@@ -1,9 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+let n1 = "你好"
+let n2 = "吃了吗"
+
+
 
 ReactDOM.render(
-    <div>hello react </div>,
+    <div className="ui menu">
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
+    </div>,
+    <div style={ { color:"red",background:"yellow" } }>{n1}{n2}{9-8} </div>,
     document.getElementById("root")
 );
 
