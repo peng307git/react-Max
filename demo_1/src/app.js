@@ -7,13 +7,6 @@ let n2 = "吃了吗"
 
 
 ReactDOM.render(
-    <div className="ui menu">
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-    </div>,
     <div style={ { color:"red",background:"yellow" } }>{n1}{n2}{9-8} </div>,
     document.getElementById("root")
 );
