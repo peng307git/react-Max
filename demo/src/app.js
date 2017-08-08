@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Nav from 'nav/Nav.js'
 import CardWarp from 'cardWarp/CardWarp.js';
 require('../Semantic-UI/dist/semantic.css')
-require('style/main.css')
+// require('style/main.css')
        
 ReactDOM.render(
     <div className="ui container">
