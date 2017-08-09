@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export class Card extends Component {
+ //属性验证
+let propTypes = {
+    imgSrc : PropTypes.string,
+    name : PropTypes.string,
+    meta : PropTypes.string,
+    desc : PropTypes.string,
+    joined : PropTypes.number,
+    nikename : PropTypes.number.isRequired
+}
+export default class Card extends Component {
     render() {
         let {imgSrc ,name,meta,desc,joined,nikename} = this.props
         return (
@@ -28,5 +38,4 @@ export class Card extends Component {
         );
     }
 }
-
-export default Card;
+Card.propTypes = propTypes;
