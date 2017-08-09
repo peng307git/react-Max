@@ -11,8 +11,25 @@ let propTypes = {
     nikename : PropTypes.number.isRequired
 }
 export default class Card extends Component {
+
+    constructor(){   //使用回掉函数 在这里绑定this
+        super()
+        this.state = {
+            isHeaderON : false
+        }
+        this.hasclick = this.hasclick.bind(this)   
+    }
+
+    hasclick(){
+        let {isHeaderON} = this.state
+        isHeaderON = !isHeaderON
+        this.setState({isHeaderON})
+    }
+
     render() {
         let {imgSrc ,name,meta,desc,joined,nikename} = this.props
+        let {isHeaderON} = this.state
+        let headerhass = isHeaderON ? "" : "empty" 
         return (
             <div className="ui card">
                 <div className="image">
@@ -30,7 +47,11 @@ export default class Card extends Component {
                 <div className="extra content">
                     <span className="right floated">joel in {joined}</span>
                     <span>
-                        <i className="empty heart icon"> </i>{nikename} nike
+                        <i 
+                            className = {`${headerhass} heart icon`}
+                            onClick = { this.hasclick }
+                        ></i>
+                        {nikename} nike
                     </span>
                 </div>
                 
