@@ -1,7 +1,9 @@
-import React from 'react'
+import React ,{Component}from 'react'
 import ReactDOM from 'react-dom'
 import Nav from 'nav/Nav.js'
-import CardWarp from 'cardWarp/CardWarp.js';
+import CardWarp from 'cardWarp/CardWarp.js'
+import PropTypes from 'prop-types';
+
 require('../Semantic-UI/dist/semantic.css')
 // require('style/main.css')
 
@@ -40,13 +42,34 @@ let data = [
         nikename : 9
     }
 ]
+class App extends Component {
+    
+    getChildContext(){
+            return{
+                et : "diad"
+            }
+    }
+    
+    render() {
+
+        let {data} = this.props
+
+        return (
+            <div className="ui container">
+                <div className="ui dividing"></div>
+                <Nav/>
+                <CardWarp data={data}/>
+            </div>
+        );
+    }
+}
+
+App.childContextTypes = {
+    et : PropTypes.string
+}
 
 ReactDOM.render(
-    <div className="ui container">
-        <div className="ui dividing"></div>
-        <Nav/>
-        <CardWarp data={data}/>
-    </div>,
+    <App data={data}/>,
     document.getElementById("root")
 );
 

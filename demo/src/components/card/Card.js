@@ -10,9 +10,14 @@ let propTypes = {
     joined : PropTypes.number,
     nikename : PropTypes.number.isRequired
 }
+let contextTypes = {
+    et : propTypes.string
+}
+
 export default class Card extends Component {
     render() {
         let {imgSrc ,name,meta,desc,joined,nikename} = this.props
+        let {et} = this.context
         return (
             <div className="ui card">
                 <div className="image">
@@ -28,7 +33,7 @@ export default class Card extends Component {
                     </div>
                 </div>
                 <div className="extra content">
-                    <span className="right floated">joel in {joined}</span>
+                    <span className="right floated">{et} in {joined}</span>
                     <span>
                         <i className="empty heart icon"> </i>{nikename} nike
                     </span>
@@ -38,4 +43,5 @@ export default class Card extends Component {
         );
     }
 }
-Card.propTypes = propTypes;
+Card.propTypes = propTypes
+Card.contextTypes = contextTypes
