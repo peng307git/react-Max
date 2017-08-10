@@ -12,12 +12,22 @@ let propTypes = {
 }
 export default class Card extends Component {
 
-    constructor(){   //使用回掉函数 在这里绑定this
-        super()
+    constructor(props){   //使用回掉函数 在这里绑定this
+        super(props)
         this.state = {
-            isHeaderON : false
+            isHeaderON : false,
+            year :props.joined
         }
-        this.hasclick = this.hasclick.bind(this)   
+        this.hasclick = this.hasclick.bind(this)  
+        this.yearAdd = this.yearAdd.bind(this) 
+    }
+
+    yearAdd (){
+        let {year} = this.state
+        this.setState({
+            year : year + 10
+        })
+        this.hasclick()
     }
 
     hasclick(){
@@ -28,7 +38,7 @@ export default class Card extends Component {
 
     render() {
         let {imgSrc ,name,meta,desc,joined,nikename} = this.props
-        let {isHeaderON} = this.state
+        let {isHeaderON,year} = this.state
         let headerhass = isHeaderON ? "" : "empty" 
         return (
             <div className="ui card">
@@ -45,7 +55,10 @@ export default class Card extends Component {
                     </div>
                 </div>
                 <div className="extra content">
-                    <span className="right floated">joel in {joined}</span>
+                    <span 
+                        className="right floated"
+                        onClick = { this.yearAdd }
+                    >joel in {year}</span>
                     <span>
                         <i 
                             className = {`${headerhass} heart icon`}
