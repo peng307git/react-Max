@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Nav from 'nav/Nav.js'
-import CardWarp from 'cardWarp/CardWarp.js';
+import CardWarp from 'cardWarp/CardWarp.js'
+import Home from 'home/Home.js'
 require('../Semantic-UI/dist/semantic.css')
 // require('style/main.css')
 
