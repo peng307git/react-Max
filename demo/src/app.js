@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 import Nav from 'nav/Nav.js'
-import CardWarp from 'cardWarp/CardWarp.js';
+import CardWarp from 'cardWarp/CardWarp.js'
+import Home from 'home/Home.js';
 require('../Semantic-UI/dist/semantic.css')
 // require('style/main.css')
 
@@ -40,13 +41,23 @@ let data = [
         nikename : 9
     }
 ]
+class App extends Component{
+    render(){
+        let {data} = this.props
+        return(
+            <div className="ui container">
+                <div className="ui dividing"></div>
+                <Nav/>
+                <CardWarp data={data}/>
+            </div>
+        )
+    }
+}
+
+
 
 ReactDOM.render(
-    <div className="ui container">
-        <div className="ui dividing"></div>
-        <Nav/>
-        <CardWarp data={data}/>
-    </div>,
+    <App/>,
     document.getElementById("root")
 );
 
