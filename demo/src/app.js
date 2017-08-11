@@ -42,13 +42,41 @@ let data = [
     }
 ]
 class App extends Component{
+
+    constructor(props){
+        super(props)
+        this.state = {
+            view : 'home'
+        }
+
+        this.changeview = this.changeview.bind(this)
+    }
+
+    changeview(view){
+        this.setState({
+            view
+        })
+    }
+
     render(){
-        let {data} = this.props
+        let {view} = this.state
+
+        let viewComp = null
+
+        switch(view){
+            case  "list":
+                viewComp = <CardWarp data={data}/>
+                break;
+            case  'home':
+                viewComp = <Home/>
+            default :
+        }
+
         return(
             <div className="ui container">
                 <div className="ui dividing"></div>
-                <Nav/>
-                <CardWarp data={data}/>
+                <Nav changeview = {this.changeview}/>
+                {viewComp}
             </div>
         )
     }
