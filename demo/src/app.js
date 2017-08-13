@@ -58,6 +58,16 @@ class App extends Component{
         })
     }
 
+   componentDidUpdate () {
+        console.log("app   更新好了");
+    }
+
+     componentDidMount() {
+        console.log("app  渲染完成");
+    }
+    
+    
+
     render(){
         let {view} = this.state
 
