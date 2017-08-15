@@ -17,7 +17,7 @@ export default class App extends React.Component {
         this.tianjia = this.tianjia.bind(this)
         this.onDestroy = this.onDestroy.bind(this)
         this.clearcom = this.clearcom.bind(this)
-        this.cla = this.cla.bind(this)
+        this.checkboxs = this.checkboxs.bind(this)
     }
 
     tianjia(ev){
@@ -47,27 +47,33 @@ export default class App extends React.Component {
         this.setState({todosData})
     }
 
+    checkboxs (ev){
+        let {todosData} = this.state
+        let {todo} = ev.target
+        console.log(todo);
+         this.setState({todosData})
+    }
+
     clearcom(){
         let {todosData} = this.state
         todosData = todosData.filter((elt) => {
-           return !elt.hascompleted 
+           return !elt.hascompleted
         })
         this.setState({todosData})
     }
 
-    cla (){
-        console.log("aaaaaaa");
-    }
 
     render() {
-        let {tianjia,onDestroy,clearcom} = this
+        let {tianjia,onDestroy,clearcom,checkboxs} = this
         let {todosData} = this.state
         let items = null
+        let todos = null
         items = todosData.map((el,i)=>{
             return (
                 <Item 
                     {... {
                        onDestroy,
+                       checkboxs,
                        todoaaa:el 
                     }}
                     key ={i}
@@ -82,12 +88,15 @@ export default class App extends React.Component {
                     <input type="text" className="new-todo" onKeyDown={tianjia}/>
                 </header>
                 <section className="main">
-                    <input type="checkbox" className="toggle-all"/>
+                    <input 
+                            type="checkbox"
+                            className="toggle-all"
+                    />
                     <ul className="todo-List">
                         {items}   
                     </ul> 
                 </section> 
-                <Footer clearcom = {this.clearcom}/> 
+               <Footer clear = {this.clearcom} /> 
                     
             </div>
         );

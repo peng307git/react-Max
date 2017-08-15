@@ -2,9 +2,7 @@
 
 export default class Footer extends React.Component {
     render() {
-
-        let {clearcom,cla} = this.props
-        console.log(this.props)
+        let {clear,todos} = this.props
         return (
             <footer className="footer">
                 <span className="todo-count">
@@ -24,7 +22,7 @@ export default class Footer extends React.Component {
                 </ul>
                 <button 
                     className="clear-completed"
-                    onClick = { this.clearcom }
+                   onClick = { ()=>{ clear() } }
                 >
                     clear all completed
                 </button>

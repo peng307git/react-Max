@@ -2,7 +2,7 @@
 let propTypes = {
     todoaaa:PT.object,
     onDestroy: PT.func,
-    tianjia:PT.func
+    checkboxs:PT.func
 }
 
 export default class Item extends React.Component {
@@ -11,11 +11,15 @@ export default class Item extends React.Component {
     
     render() {
 
-        let {todoaaa,onDestroy} = this.props
+        let {todoaaa,onDestroy,checkboxs} = this.props
         return (
             <li>
                 <div className="view">
-                    <input type="checkbox" className="toggle"/>
+                    <input 
+                            type="checkbox" 
+                            className="toggle"
+                            onChange = {checkboxs  }
+                    />
                     <label htmlFor="">
                         {todoaaa.value}
                     </label>
