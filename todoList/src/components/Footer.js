@@ -1,12 +1,10 @@
 export default class Footer extends React.Component {
 
-    constructor(props){
-        super(props)
-    }
-
-    
 
     render() {
+
+        let {tianjia,onDestroy,clearcom} = this.props
+        console.log(this.props)
         return (
             <footer className="footer">
                 <span className="todo-count">
@@ -24,7 +22,10 @@ export default class Footer extends React.Component {
                         <a href="#/completed">completed</a>
                     </li>
                 </ul>
-                <button className="clear-completed">
+                <button 
+                    className="clear-completed"
+                     onClick = {ev => clearcom()}
+                >
                     clear all completed
                 </button>
             </footer>

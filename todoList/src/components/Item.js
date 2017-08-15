@@ -1,29 +1,27 @@
 
 let propTypes = {
-    todo:PT.object,
-    onDestroy: PT.func
+    todoaaa:PT.object,
+    onDestroy: PT.func,
+    tianjia:PT.func
 }
 
 export default class Item extends React.Component {
 
-    constructor(props){
-        super(props)
-    }
+    
     
     render() {
 
-        let {todo,onDestroy} = this.props
-
+        let {todoaaa,onDestroy,tianjia,clearcom} = this.props
         return (
             <li>
                 <div className="view">
                     <input type="checkbox" className="toggle"/>
                     <label htmlFor="">
-                        {todo.value}
+                        {todoaaa.value}
                     </label>
                 </div>
                 <buttton className="destroy"
-                    onClick = {ev => onDestroy(todo)}
+                    onClick = {ev => onDestroy(todoaaa)}
                 ></buttton>
                 <input type="text" className="edit"/>
             </li>

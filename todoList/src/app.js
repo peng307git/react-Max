@@ -8,7 +8,7 @@ require('style/index.css')
 
 
 export default class App extends React.Component {
-
+   
     constructor(props){
         super(props)
         this.state = {
@@ -55,7 +55,7 @@ export default class App extends React.Component {
     }
 
     render() {
-        let {tianjia,onDestroy,clear} = this
+        let {tianjia,onDestroy,clearcom} = this
         let {todosData} = this.state
         let items = null
         items = todosData.map((el,i)=>{
@@ -63,7 +63,7 @@ export default class App extends React.Component {
                 <Item 
                     {... {
                        onDestroy,
-                       todo:el 
+                       todoaaa:el 
                     }}
                     key ={i}
                 />
@@ -82,7 +82,7 @@ export default class App extends React.Component {
                         {items}   
                     </ul> 
                 </section> 
-                <Footer/> 
+                <Footer {tianjia}/> 
                     
             </div>
         );
