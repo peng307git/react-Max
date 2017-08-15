@@ -1,9 +1,9 @@
+
+
 export default class Footer extends React.Component {
-
-
     render() {
 
-        let {tianjia,onDestroy,clearcom} = this.props
+        let {clearcom,cla} = this.props
         console.log(this.props)
         return (
             <footer className="footer">
@@ -24,7 +24,7 @@ export default class Footer extends React.Component {
                 </ul>
                 <button 
                     className="clear-completed"
-                     onClick = {ev => clearcom()}
+                    onClick = { this.clearcom }
                 >
                     clear all completed
                 </button>

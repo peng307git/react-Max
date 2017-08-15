@@ -17,6 +17,7 @@ export default class App extends React.Component {
         this.tianjia = this.tianjia.bind(this)
         this.onDestroy = this.onDestroy.bind(this)
         this.clearcom = this.clearcom.bind(this)
+        this.cla = this.cla.bind(this)
     }
 
     tianjia(ev){
@@ -52,6 +53,10 @@ export default class App extends React.Component {
            return !elt.hascompleted 
         })
         this.setState({todosData})
+    }
+
+    cla (){
+        console.log("aaaaaaa");
     }
 
     render() {

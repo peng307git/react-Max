@@ -11,7 +11,7 @@ export default class Item extends React.Component {
     
     render() {
 
-        let {todoaaa,onDestroy,tianjia,clearcom} = this.props
+        let {todoaaa,onDestroy} = this.props
         return (
             <li>
                 <div className="view">
