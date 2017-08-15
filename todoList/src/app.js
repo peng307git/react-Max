@@ -82,7 +82,7 @@ export default class App extends React.Component {
                         {items}   
                     </ul> 
                 </section> 
-                <Footer {tianjia}/> 
+                <Footer clearcom = {this.clearcom}/> 
                     
             </div>
         );
