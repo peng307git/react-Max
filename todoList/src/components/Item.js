@@ -32,8 +32,8 @@ export default class Item extends React.Component {
         this.setState({
             inEdit : true,
             ival : value
-        })
-        
+        },() => this.refs.ipuvla.focus())
+       
     }
 
     down(){
@@ -57,7 +57,7 @@ export default class Item extends React.Component {
         let {onEdit,onBlur,onEnd,inpchange} = this
         let {todoaaa,onDestroy,onchecked,itemdown} = this.props
         let { inEdit,ival } = this.state
-        let itemName = ""
+        let itemName = todoaaa.hascompleted ? "completed" : ''
         if( inEdit ) {
             itemName += 'editing'
         }
@@ -86,6 +86,7 @@ export default class Item extends React.Component {
                     onBlur = {onBlur}
                     onKeyDown = {onEnd}
                     onChange = {inpchange}
+                    ref="ipuvla"
                 />
             </li>
         );

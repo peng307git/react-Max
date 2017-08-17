@@ -4,11 +4,8 @@ import Footer from 'components/Footer';
 require('style/base.css')
 require('style/index.css')
 
-
-
-
 export default class App extends React.Component {
-   
+    
     constructor(props){
         super(props)
         this.state = {
@@ -44,16 +41,15 @@ export default class App extends React.Component {
 
     tianjia(ev){
         if (ev.keyCode !==13 ) return
-        
-        let {ipuVal} = this.state
-
+        let {ipuVal,todosData} = this.state
         let value = ipuVal.trim()
-        if (value == "") return
         let todo = {}
+        if (value == "") return
+        
         todo.id = new Date().getTime()
         todo.value = value
         todo.hascompleted = false
-        let {todosData} = this.state
+        
         todosData.push(todo)
         this.setState({
             todosData,
