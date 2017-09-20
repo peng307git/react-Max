@@ -33,6 +33,7 @@ export default class Item extends React.Component {
             inEdit : true,
             ival : value
         },() => this.refs.ipuvla.focus())
+        
        
     }
 
@@ -42,6 +43,7 @@ export default class Item extends React.Component {
         })
         let {itemdown,todoaaa} = this.props
         itemdown(todoaaa,this.state.ival)
+        
     }
 
     onBlur(){

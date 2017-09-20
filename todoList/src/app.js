@@ -1,5 +1,6 @@
 import Item from 'components/Item';
 import Footer from 'components/Footer';     
+import {BrowserRouter as Router , Route} from 'react-router-dom';
 
 require('style/base.css')
 require('style/index.css')
@@ -200,9 +201,25 @@ export default class App extends React.Component {
 }
 
 
+class Acc extends React.Component{
+    render() {
+      return (
+        <div>
+          acc
+        </div>
+      )
+    }
+}
+
 
 ReactDOM.render(
-        <App/>,
+    <Router>
+        <div>
+            <Route path="/" component={App}></Route>
+            <Route path="/1" component={Acc}></Route>
+        </div>
+        
+    </Router>,
         document.getElementById("root")
  );
 
