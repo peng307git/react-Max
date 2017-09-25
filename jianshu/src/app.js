@@ -1,6 +1,6 @@
 
 ReactDOM.render(
-    <div>hello</div>,
+    <div>aaa</div>
     document.getElementById('root')
 );
 
